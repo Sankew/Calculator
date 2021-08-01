@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CalcButton: String {
+enum CalcButton: String { //Placeholders for the Numbers and Symbols
     case one = "1"
     case two = "2"
     case three = "3"
@@ -50,7 +50,7 @@ struct ContentView: View {
     @State var runningNumber = 0
     @State var currentOperation: Operation = .none
 
-    let buttons: [[CalcButton]] = [
+    let buttons: [[CalcButton]] = [ //Layout for the UI
         [.clear, .negative, .percent, .divide],
         [.seven, .eight, .nine, .mutliply],
         [.four, .five, .six, .subtract],
@@ -123,10 +123,10 @@ struct ContentView: View {
                 let runningValue = self.runningNumber
                 let currentValue = Int(self.value) ?? 0
                 switch self.currentOperation {
-                case .add: self.value = "\(runningValue + currentValue)"
-                case .subtract: self.value = "\(runningValue - currentValue)"
-                case .multiply: self.value = "\(runningValue * currentValue)"
-                case .divide: self.value = "\(runningValue / currentValue)"
+                case .add: self.value = "\(runningValue + currentValue)" //Addition
+                case .subtract: self.value = "\(runningValue - currentValue)" //Subraction
+                case .multiply: self.value = "\(runningValue * currentValue)" //Multiplication
+                case .divide: self.value = "\(runningValue / currentValue)"//Division
                 case .none:
                     break
                 }
